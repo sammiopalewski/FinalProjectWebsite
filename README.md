@@ -1,13 +1,9 @@
-# Welcome to our [team project website!](https://julioveracruz.github.io/testwebsite/)
+# [Fin 377 Final Project](https://sammiopalewski.github.io/FinalProjectWebsite/)
 
 This is a website to showcase our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 
 To see the complete analysis file(s) click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
 
-Maybe you want a different website them for the project? Consider `minimal-mistakes`:
-1. [Go here](https://github.com/mmistakes/mm-github-pages-starter/generate).
-2. In the resulting repo, click Settings, then Pages, then make sure the source is the main branch.
-3. [The doc site is here](https://mmistakes.github.io/minimal-mistakes/docs/structure/) and will help you customize layouts and figure out how to use it.
 
 ## Table of contents
 1. [Introduction](#introduction)
@@ -77,14 +73,20 @@ Blah blah
 
 
 ## About the team
-
-<img src="pics/julio.jpg" alt="julio" width="300"/>
+Sammi Opalewski 
+<img src="" alt="" width="300"/>
 <br>
-Julio is a senior at Lehigh studying finance.
+Chris Toh
 <br><br><br>
-<img src="pics/don2.jpg" alt="don" width="300"/>
+<img src="" alt="" width="300"/>
 <br>
-Don is an assistant professor at Lehigh.
+Sam Fleetwood
+<img src="" alt="" width="300"/>
+<br>
+Matt Slaski
+<br><br><br>
+<img src="" alt="" width="300"/>
+<br>
 
 
 ## More 
