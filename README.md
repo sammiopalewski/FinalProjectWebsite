@@ -78,14 +78,18 @@ Sammi Opalewski
 Sammi is a junior majoring in Finance and minoring in Applied Mathematics. 
 <br>
 Chris Toh
+<br>
 Chris is a senior majoring in IBE Financial Engineering.
 <br><br><br>
 <img src="" alt="" width="300"/>
 <br>
 Sam Fleetwood
+<br>
+Sam is a senior majoring in IBE Finance and Industrial Engineering. 
 <img src="" alt="" width="300"/>
 <br>
 Matt Slaski
+<br>
 Matt is a senior majoring in IBE Finance. 
 <br><br><br>
 <img src="" alt="" width="300"/>
