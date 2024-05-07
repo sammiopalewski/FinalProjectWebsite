@@ -2,7 +2,6 @@
 
 This is a website to showcase our final project for FIN 377 - Data Science for Finance course at Lehigh University.
 
-To see the complete analysis file(s) click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
 
 
 ## Table of contents
@@ -20,7 +19,7 @@ To see the complete analysis file(s) click [here](https://github.com/julioveracr
 
 ## Methodology <a name="meth"></a>
 
-Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Amazon Prime and Amazon respectively. [More details are provided in the Appendix](page2).
+Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Disney Disney Plus respectively. We repeated these regressions. The methodology for the event analysis in found on our dashboard as well as in our report. 
 
 Note that for the purposes of the website, you have to copy this code into the markdown file and  
 put the code inside trip backticks with the keyword `python`.
@@ -84,10 +83,10 @@ r_squared = model.score(X, y)
 print("R-squared:", r_squared)
 ```
 
-Notice that the output does NOT show! **You have to copy in figures and tables from the notebooks.**
+**You have to copy in figures and tables from the notebooks.**
 
 ## Section <a name="section2"></a>
-Blah blah
+
 
 ### Subsection 1 <a name="subsec2-1"></a>
 This is a subsection, formatted in heading 3 style
@@ -96,6 +95,7 @@ This is a subsection, formatted in heading 3 style
 This is a subsection, formatted in heading 3 style
 
 ## Analysis Section <a name="section3"></a>
+The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.15 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
 
 Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
 
