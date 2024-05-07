@@ -118,8 +118,8 @@ Blah blah
 ## About the team
 Sammi Opalewski 
 <br>
-![](pics/IMG_0565 (1).JPEG)
-<img src="pics/IMG_0565 (1).JPEG" alt="" width="300"/>
+<img src="pics/IMG_0565 (1).JPEG" alt="10" width="200"/>
+<br>
 Sammi is a junior majoring in Finance and minoring in Applied Mathematics. 
 <br>
 Chris Toh
