@@ -80,8 +80,6 @@ print("R-squared:", r_squared)
 ## Analysis Section <a name="section3"></a>
 The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a company's stock, not just the increase in subscriber accounts of a owned streaming service. 
 
-Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
-
 ![](pics/Disney_+_Subs_Graph.png)
 <br><br>
 As you can see, there is a relatively constant increase in quarterly subsciber count between the years of 2020 and 2023. After that the subscriber count plateaued and stayed roughly constant. 
@@ -130,5 +128,7 @@ Matt is a senior majoring in IBE Finance.
 ## More 
 
 To view the GitHub repo for this website, click [here](https://github.com/sammiopalewski/FinalProjectWebsite).
+<br>
 To view the GitHub repo for our the final project, click [here](https://github.com/sammiopalewski/Final_Project)
+<br>
 To view our dashboard, click [here](https://finalproject-bt8gkfbzkptf7gkk8yhyka.streamlit.app/)
