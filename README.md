@@ -7,11 +7,8 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Methodology](#meth)
-3. [Section 2](#section2)
-    1. [Subsection](#subsec2-1)
-    2. [Subsection](#subsec2-2)
 4. [Analysis Section](#section3)
-5. [Summary](#summary)
+5. [Other Results](#summary)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -83,14 +80,13 @@ print("R-squared:", r_squared)
 
 **You have to copy in figures and tables from the notebooks.**
 
-## Section <a name="section2"></a>
+
 
 
 ### Subsection 1 <a name="subsec2-1"></a>
 This is a subsection, formatted in heading 3 style
 
-### Subsection 2 <a name="subsec2-2"></a>
-This is a subsection, formatted in heading 3 style
+
 
 ## Analysis Section <a name="section3"></a>
 The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
@@ -105,13 +101,8 @@ As you can see, there is a relatively constant increase in quarterly subsciber c
 <br><br>
 Here we have the daily returns of disney stock between 2000 and 2024. Through these two graphs, we can't completely tell if there is a relationship between the two, so we ran a regression model. The rest of the graphs the contain suberscriber count over time as well as stock returns over time are in the pics folder of this repo. 
 <br><br>
-![](pics/plot3.png)
-<br><br>
-More analysis.
 
-## Summary <a name="summary"></a>
-
-Blah blah
+## Other Results <a name="summary"></a>
 
 
 
@@ -126,21 +117,23 @@ Chris Toh
 <br>
 Chris is a senior majoring in IBE Financial Engineering.
 <br><br><br>
-<img src="" alt="" width="300"/>
+<img src="pics/Headshot.png" alt="10" width="200"/>
 <br>
 Sam Fleetwood
 <br>
 Sam is a senior majoring in IBE Finance and Industrial Engineering. 
-<img src="" alt="" width="300"/>
+<br>
+<img src="pics/LinkedInpfp.png" alt="10" width="200"/>
 <br>
 Matt Slaski
 <br>
 Matt is a senior majoring in IBE Finance. 
 <br><br><br>
-<img src="" alt="" width="300"/>
+<img src="pics/Professional Headshot.png" alt="10" width="200"/>
 <br>
 
 
 ## More 
 
-To view the GitHub repo for this website, click [here](https://github.com/donbowen/teamproject).
+To view the GitHub repo for this website, click [here](https://github.com/sammiopalewski/FinalProjectWebsite).
+To viewe the GitHub repo for our the final project, click [here](https://github.com/sammiopalewski/Final_Project)
