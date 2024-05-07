@@ -16,27 +16,72 @@ To see the complete analysis file(s) click [here](https://github.com/julioveracr
 
 ## Introduction  <a name="introduction"></a>
 
-(The "Introduction" text above is formatted in heading 2 style.) The main goal of this project is to explore the relationship between subscriber count of streaming services and stock returns of subsidiary companies. We will also be looking at how specific events impacted the stock returns and subscriber counts in a dashboard linked [here]().   
+(The "Introduction" text above is formatted in heading 2 style.) The main goal of this project is to explore the relationship between subscriber count of streaming services and stock returns of subsidiary companies. We will also be looking at how specific events impacted the stock returns and subscriber counts in a dashboard linked [here](https://finalproject-bt8gkfbzkptf7gkk8yhyka.streamlit.app/).   
 
 ## Methodology <a name="meth"></a>
 
 Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Amazon Prime and Amazon respectively. [More details are provided in the Appendix](page2).
- 
+
 Note that for the purposes of the website, you have to copy this code into the markdown file and  
 put the code inside trip backticks with the keyword `python`.
 
 ```python
-import seaborn as sns 
-iris = sns.load_dataset('iris') 
+import pandas as pd
+import pandas as pd
+from sklearn.linear_model import LinearRegression
 
-print(iris.head(),  '\n---')
-print(iris.tail(),  '\n---')
-print(iris.columns, '\n---')
-print("The shape is: ",iris.shape, '\n---')
-print("Info:",iris.info(), '\n---') # memory usage, name, dtype, and # of non-null obs (--> # of missing obs) per variable
-print(iris.describe(), '\n---') # summary stats, and you can customize the list!
-print(iris['species'].value_counts()[:10], '\n---')
-print(iris['species'].nunique(), '\n---')
+# Step 1: Filter dates for stock returns to specific order
+filtered_returns_df_disney = disney_data_ret[['Date', 'Close', 'Adj Close']]
+
+# Filter for specific dates
+specific_dates = ['2019-10-01', '2020-01-02', '2020-02-01', '2020-07-01', '2020-10-01' , '2021-01-04' , '2021-04-01' , 
+                  '2021-07-01' , '2021-10-01' ,'2022-01-03' , '2022-04-01' , '2022-07-01' , '2022-10-03' , '2023-01-03'
+                  '2023-04-03' , '2023-07-03' , '2023-10-02' , '2024-01-02']
+filtered_returns_df_disney = filtered_returns_df_disney[filtered_returns_df_disney['Date'].isin(specific_dates)]
+
+print(filtered_returns_df_disney)
+
+# Print the DataFrame after preprocessing
+print("Preprocessed Subscriber DataFrame:")
+print(disney_data_sub_reg)
+
+#Step 3: Merge the filtered dataframe with the subscribers dataframe based on the date column
+merged_df_disney = pd.merge(filtered_returns_df_disney, disney_data_sub_reg, on='Date', how='inner')
+print(merged_df_disney)
+
+disney_quarter_return = merged_df_disney['Adj Close'].pct_change() * 100
+
+# Adding a new column titled 'quarter_return'
+merged_df_disney['quarter_return'] = disney_quarter_return
+
+# Printing the updated DataFrame
+print(merged_df_disney)
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inplace=True)
+
+# Reshape X to a 2D array
+X = merged_df_disney['quarter_return'].values.reshape(-1, 1)
+y = merged_df_disney['Number of Subs (mil)']
+
+# Create and fit the model
+model = LinearRegression()
+model.fit(X, y)
+
+# Get coefficients
+slope = model.coef_[0]
+intercept = model.intercept_
+
+# Print results
+print("Regression Equation: y = {:.2f}x + {:.2f}".format(slope, intercept))
+
+# Calculate R-squared
+r_squared = model.score(X, y)
+
+# Print R-squared
+print("R-squared:", r_squared)
 ```
 
 Notice that the output does NOT show! **You have to copy in figures and tables from the notebooks.**
