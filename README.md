@@ -7,11 +7,8 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Methodology](#meth)
-3. [Section 2](#section2)
-    1. [Subsection](#subsec2-1)
-    2. [Subsection](#subsec2-2)
 4. [Analysis Section](#section3)
-5. [Summary](#summary)
+5. [Other Results](#summary)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -19,17 +16,16 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 
 ## Methodology <a name="meth"></a>
 
-Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Disney Disney Plus respectively. We repeated these regressions. The methodology for the event analysis in found on our dashboard as well as in our report. 
+Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Disney Disney Plus respectively. We repeated these regressions. We had to make sure that the data for subscriber count matched stock returns, so we had to claculate quarter returns and filter our stock return data to the accuarte dates. The methodology for the event analysis in found on our dashboard as well as in our report. 
 
-Note that for the purposes of the website, you have to copy this code into the markdown file and  
-put the code inside trip backticks with the keyword `python`.
+
 
 ```python
 import pandas as pd
-import pandas as pd
+import numpy as np
 from sklearn.linear_model import LinearRegression
 
-# Step 1: Filter dates for stock returns to specific order
+# Filter dates for stock returns to specific order
 filtered_returns_df_disney = disney_data_ret[['Date', 'Close', 'Adj Close']]
 
 # Filter for specific dates
@@ -44,7 +40,7 @@ print(filtered_returns_df_disney)
 print("Preprocessed Subscriber DataFrame:")
 print(disney_data_sub_reg)
 
-#Step 3: Merge the filtered dataframe with the subscribers dataframe based on the date column
+# Merge the filtered dataframe with the subscribers dataframe based on the date column
 merged_df_disney = pd.merge(filtered_returns_df_disney, disney_data_sub_reg, on='Date', how='inner')
 print(merged_df_disney)
 
@@ -56,8 +52,7 @@ merged_df_disney['quarter_return'] = disney_quarter_return
 # Printing the updated DataFrame
 print(merged_df_disney)
 
-import numpy as np
-from sklearn.linear_model import LinearRegression
+
 
 merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inplace=True)
 
@@ -65,82 +60,75 @@ merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inpla
 X = merged_df_disney['quarter_return'].values.reshape(-1, 1)
 y = merged_df_disney['Number of Subs (mil)']
 
-# Create and fit the model
+
 model = LinearRegression()
 model.fit(X, y)
 
-# Get coefficients
+
 slope = model.coef_[0]
 intercept = model.intercept_
 
-# Print results
 print("Regression Equation: y = {:.2f}x + {:.2f}".format(slope, intercept))
 
 # Calculate R-squared
 r_squared = model.score(X, y)
 
-# Print R-squared
+
 print("R-squared:", r_squared)
 ```
 
-**You have to copy in figures and tables from the notebooks.**
-
-## Section <a name="section2"></a>
-
-
-### Subsection 1 <a name="subsec2-1"></a>
-This is a subsection, formatted in heading 3 style
-
-### Subsection 2 <a name="subsec2-2"></a>
-This is a subsection, formatted in heading 3 style
-
 ## Analysis Section <a name="section3"></a>
-The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.15 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
+The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a company's stock, not just the increase in subscriber accounts of a owned streaming service. 
 
-Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
+![](pics/Disney_+_Subs_Graph.png)
+<br><br>
+As you can see, there is a relatively constant increase in quarterly subsciber count between the years of 2020 and 2023. After that the subscriber count plateaued and stayed roughly constant. 
+<br><br>
+![](pics/Disney_Daily_Ret_Graph.png)
+<br><br>
+Here we have the daily returns of disney stock between 2000 and 2024. Through these two graphs, we can't completely tell if there is a relationship between the two, so we ran a regression model. The rest of the graphs the contain suberscriber count over time as well as stock returns over time are in the pics folder of this repo. 
+<br><br>
 
-![](pics/plot1.png)
-<br><br>
-Some analysis here
-<br><br>
-![](pics/plot2.png)
-<br><br>
-More analysis here.
-<br><br>
-![](pics/plot3.png)
-<br><br>
-More analysis.
-
-## Summary <a name="summary"></a>
-
-Blah blah
-
+## Other Results <a name="summary"></a>
+For Amazon stock returns and Amazon Prime Subscriber count, we found R^2 to be 0.011322562195471786. 
+For HBO Max subscriber counts and AT&T stock returns, we found R^2 to be 0.016821886366874983. 
+For Hulu subscriber count and Disney stocks returns, we found R^2 to be 0.048301226831123034. 
+For Peacock subscriber count and Comcast stock returns we found R^2 to be 0.10915861687353778. 
+For ESPN Plus subscriber count and Disney stock returns we found R^2 to be 0.07559649045011252. 
 
 
 ## About the team
 Sammi Opalewski 
-<img src="" alt="" width="300"/>
+<br>
+<img src="pics/IMG_0565 (1).JPEG" alt="10" width="200"/>
+<br>
 Sammi is a junior majoring in Finance and minoring in Applied Mathematics. 
 <br>
 Chris Toh
 <br>
+<img src="pics/Headshot.png" alt="10" width="200"/>
+<br>
 Chris is a senior majoring in IBE Financial Engineering.
-<br><br><br>
-<img src="" alt="" width="300"/>
 <br>
 Sam Fleetwood
 <br>
+<img src="pics/LinkedInpfp.png" alt="10" width="200"/>
+<br>
 Sam is a senior majoring in IBE Finance and Industrial Engineering. 
-<img src="" alt="" width="300"/>
 <br>
 Matt Slaski
 <br>
+<img src="pics/Professional Headshot.png" alt="10" width="200"/>
+<br>
 Matt is a senior majoring in IBE Finance. 
-<br><br><br>
-<img src="" alt="" width="300"/>
+
 <br>
 
 
 ## More 
 
-To view the GitHub repo for this website, click [here](https://github.com/donbowen/teamproject).
+To view the GitHub repo for this website, click [here](https://github.com/sammiopalewski/FinalProjectWebsite).
+<br>
+To view the GitHub repo for our the final project, click [here](https://github.com/sammiopalewski/Final_Project)
+<br>
+To view our dashboard, click [here](https://finalproject-bt8gkfbzkptf7gkk8yhyka.streamlit.app/)
