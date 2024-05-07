@@ -116,7 +116,7 @@ Sammi is a junior majoring in Finance and minoring in Applied Mathematics.
 Chris Toh
 <br>
 Chris is a senior majoring in IBE Financial Engineering.
-<br><br><br>
+<br>
 <img src="pics/Headshot.png" alt="10" width="200"/>
 <br>
 Sam Fleetwood
@@ -127,9 +127,9 @@ Sam is a senior majoring in IBE Finance and Industrial Engineering.
 <br>
 Matt Slaski
 <br>
-Matt is a senior majoring in IBE Finance. 
-<br><br><br>
 <img src="pics/Professional Headshot.png" alt="10" width="200"/>
+Matt is a senior majoring in IBE Finance. 
+
 <br>
 
 
