@@ -91,10 +91,15 @@ Here we have the daily returns of disney stock between 2000 and 2024. Through th
 
 ## Other Results <a name="summary"></a>
 For Amazon stock returns and Amazon Prime Subscriber count, we found R^2 to be 0.011322562195471786. 
+<br>
 For HBO Max subscriber counts and AT&T stock returns, we found R^2 to be 0.016821886366874983. 
+<br>
 For Hulu subscriber count and Disney stocks returns, we found R^2 to be 0.048301226831123034. 
-For Peacock subscriber count and Comcast stock returns we found R^2 to be 0.10915861687353778. 
-For ESPN Plus subscriber count and Disney stock returns we found R^2 to be 0.07559649045011252. 
+<br>
+For Peacock subscriber count and Comcast stock returns we found R^2 to be 0.10915861687353778.
+<br>
+For ESPN Plus subscriber count and Disney stock returns we found R^2 to be 0.07559649045011252.
+<br>
 
 
 ## About the team
