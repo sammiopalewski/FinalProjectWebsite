@@ -4,7 +4,7 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 
 
 
-## Table of contents
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Methodology](#meth)
 4. [Analysis Section](#section3)
