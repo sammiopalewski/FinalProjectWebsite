@@ -36,7 +36,7 @@ filtered_returns_df_disney = filtered_returns_df_disney[filtered_returns_df_disn
 
 print(filtered_returns_df_disney)
 
-# Print the DataFrame after preprocessing
+
 print("Preprocessed Subscriber DataFrame:")
 print(disney_data_sub_reg)
 
@@ -49,14 +49,14 @@ disney_quarter_return = merged_df_disney['Adj Close'].pct_change() * 100
 # Adding a new column titled 'quarter_return'
 merged_df_disney['quarter_return'] = disney_quarter_return
 
-# Printing the updated DataFrame
+
 print(merged_df_disney)
 
 
 
 merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inplace=True)
 
-# Reshape X to a 2D array
+
 X = merged_df_disney['quarter_return'].values.reshape(-1, 1)
 y = merged_df_disney['Number of Subs (mil)']
 
