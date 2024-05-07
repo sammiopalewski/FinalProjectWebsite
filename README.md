@@ -119,7 +119,7 @@ Blah blah
 Sammi Opalewski 
 <br>
 ![](pics/IMG_0565 (1).JPEG)
-<img src="" alt="" width="300"/>
+<img src="pics/IMG_0565 (1).JPEG" alt="" width="300"/>
 Sammi is a junior majoring in Finance and minoring in Applied Mathematics. 
 <br>
 Chris Toh
