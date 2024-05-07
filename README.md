@@ -26,10 +26,10 @@ put the code inside trip backticks with the keyword `python`.
 
 ```python
 import pandas as pd
-import pandas as pd
+import numpy as np
 from sklearn.linear_model import LinearRegression
 
-# Step 1: Filter dates for stock returns to specific order
+# Filter dates for stock returns to specific order
 filtered_returns_df_disney = disney_data_ret[['Date', 'Close', 'Adj Close']]
 
 # Filter for specific dates
@@ -44,7 +44,7 @@ print(filtered_returns_df_disney)
 print("Preprocessed Subscriber DataFrame:")
 print(disney_data_sub_reg)
 
-#Step 3: Merge the filtered dataframe with the subscribers dataframe based on the date column
+# Merge the filtered dataframe with the subscribers dataframe based on the date column
 merged_df_disney = pd.merge(filtered_returns_df_disney, disney_data_sub_reg, on='Date', how='inner')
 print(merged_df_disney)
 
@@ -56,8 +56,7 @@ merged_df_disney['quarter_return'] = disney_quarter_return
 # Printing the updated DataFrame
 print(merged_df_disney)
 
-import numpy as np
-from sklearn.linear_model import LinearRegression
+
 
 merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inplace=True)
 
@@ -65,21 +64,20 @@ merged_df_disney.dropna(subset=['quarter_return', 'Number of Subs (mil)'], inpla
 X = merged_df_disney['quarter_return'].values.reshape(-1, 1)
 y = merged_df_disney['Number of Subs (mil)']
 
-# Create and fit the model
+
 model = LinearRegression()
 model.fit(X, y)
 
-# Get coefficients
+
 slope = model.coef_[0]
 intercept = model.intercept_
 
-# Print results
 print("Regression Equation: y = {:.2f}x + {:.2f}".format(slope, intercept))
 
 # Calculate R-squared
 r_squared = model.score(X, y)
 
-# Print R-squared
+
 print("R-squared:", r_squared)
 ```
 
@@ -95,17 +93,17 @@ This is a subsection, formatted in heading 3 style
 This is a subsection, formatted in heading 3 style
 
 ## Analysis Section <a name="section3"></a>
-The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.15 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
+The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
 
 Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
 
-![](pics/plot1.png)
+![](pics/Disney_+_Subs_Graph.png)
 <br><br>
-Some analysis here
+As you can see, there is a relatively constant increase in quarterly subsciber count between the years of 2020 and 2023. After that the subscriber count plateaued and stayed roughly constant. 
 <br><br>
-![](pics/plot2.png)
+![](pics/Disney_Daily_Ret_Graph.png)
 <br><br>
-More analysis here.
+Here we have the daily returns of disney stock between 2000 and 2024. Through these two graphs, we can't completely tell if there is a relationship between the two, so we ran a regression model. The rest of the graphs the contain suberscriber count over time as well as stock returns over time are in the pics folder of this repo. 
 <br><br>
 ![](pics/plot3.png)
 <br><br>
@@ -119,6 +117,8 @@ Blah blah
 
 ## About the team
 Sammi Opalewski 
+<br>
+![](pics/IMG_0565 (1).JPEG)
 <img src="" alt="" width="300"/>
 Sammi is a junior majoring in Finance and minoring in Applied Mathematics. 
 <br>
