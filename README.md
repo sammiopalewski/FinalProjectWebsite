@@ -16,10 +16,9 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 
 ## Methodology <a name="meth"></a>
 
-Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Disney Disney Plus respectively. We repeated these regressions. The methodology for the event analysis in found on our dashboard as well as in our report. 
+Here is some code that we used to develop our analysis. This is the code we used to conduct our regression analysis between subscriber count and stock returns for Disney Disney Plus respectively. We repeated these regressions. We had to make sure that the data for subscriber count matched stock returns, so we had to claculate quarter returns and filter our stock return data to the accuarte dates. The methodology for the event analysis in found on our dashboard as well as in our report. 
 
-Note that for the purposes of the website, you have to copy this code into the markdown file and  
-put the code inside trip backticks with the keyword `python`.
+
 
 ```python
 import pandas as pd
@@ -78,18 +77,8 @@ r_squared = model.score(X, y)
 print("R-squared:", r_squared)
 ```
 
-**You have to copy in figures and tables from the notebooks.**
-
-
-
-
-### Subsection 1 <a name="subsec2-1"></a>
-This is a subsection, formatted in heading 3 style
-
-
-
 ## Analysis Section <a name="section3"></a>
-The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a companies stock, not just the increase in subscriber accounts of a owned streaming service. 
+The result of the regression was  y = -0.70x + 115.28 , and R^2 was 0.10155459640541864. This means that 10.16 % of the variability in stock returns explains the relationship between stock returns and subscriber counts. This R^2 is very low. Also, a negative slope means that as the stock return increased, the subscriber count decreased. As mentioned in our report, the small r^2 was not what we were expecting, and some of the other regressions had an even lower r^2. This could be do to many things. What sticks out to us is that there are many factors that can effect a company's stock, not just the increase in subscriber accounts of a owned streaming service. 
 
 Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
 
@@ -103,7 +92,11 @@ Here we have the daily returns of disney stock between 2000 and 2024. Through th
 <br><br>
 
 ## Other Results <a name="summary"></a>
-
+For Amazon stock returns and Amazon Prime Subscriber count, we found R^2 to be 0.011322562195471786. 
+For HBO Max subscriber counts and AT&T stock returns, we found R^2 to be 0.016821886366874983. 
+For Hulu subscriber count and Disney stocks returns, we found R^2 to be 0.048301226831123034. 
+For Peacock subscriber count and Comcast stock returns we found R^2 to be 0.10915861687353778. 
+For ESPN Plus subscriber count and Disney stock returns we found R^2 to be 0.07559649045011252. 
 
 
 ## About the team
@@ -128,6 +121,7 @@ Sam is a senior majoring in IBE Finance and Industrial Engineering.
 Matt Slaski
 <br>
 <img src="pics/Professional Headshot.png" alt="10" width="200"/>
+<br>
 Matt is a senior majoring in IBE Finance. 
 
 <br>
@@ -136,4 +130,5 @@ Matt is a senior majoring in IBE Finance.
 ## More 
 
 To view the GitHub repo for this website, click [here](https://github.com/sammiopalewski/FinalProjectWebsite).
-To viewe the GitHub repo for our the final project, click [here](https://github.com/sammiopalewski/Final_Project)
+To view the GitHub repo for our the final project, click [here](https://github.com/sammiopalewski/Final_Project)
+To view our dashboard, click [here](https://finalproject-bt8gkfbzkptf7gkk8yhyka.streamlit.app/)
